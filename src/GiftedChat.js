@@ -25,6 +25,7 @@ import Message from './Message';
 import MessageContainer from './MessageContainer';
 import Send from './Send';
 import Time from './Time';
+import GiftedChatInteractionManager from './GiftedChatInteractionManager';
 
 // Min and max heights of ToolbarInput and Composer
 // Needed for Composer auto grow and ScrollView animation
@@ -447,7 +448,7 @@ class GiftedChat extends React.Component {
         onLayout={(e) => {
           const layout = e.nativeEvent.layout;
           this.setMaxHeight(layout.height);
-          InteractionManager.runAfterInteractions(() => {
+          GiftedChatInteractionManager.runAfterInteractions(() => {
             this.setState({
               isInitialized: true,
               text: '',
